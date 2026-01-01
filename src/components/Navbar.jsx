@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from './ui/button';
+import logo from '../assets/Genius36.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,24 +28,32 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
+    // <nav
+    //   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    //     isScrolled
+    //       ? 'bg-white/95 backdrop-blur-md shadow-lg'
+    //       : 'bg-transparent'
+    //   }`}
+    // >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+              <img
+                src={logo}
+                alt="Genius36 Logo"
+                className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+              />
+
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">G36</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                
+              </div> */}
             </div>
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <span className={`font-bold text-lg leading-tight transition-colors ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
@@ -55,7 +64,7 @@ const Navbar = () => {
               }`}>
                 Technologies
               </span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,11 +76,11 @@ const Navbar = () => {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   location.pathname === link.path
                     ? isScrolled
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white/20 text-white backdrop-blur-sm'
+                      ? 'bg-blue-600 text-black'
+                      : 'bg-white/20 text-black backdrop-blur-sm'
                     : isScrolled
                     ? 'text-gray-700 hover:bg-gray-100'
-                    : 'text-white/90 hover:bg-white/10'
+                    : 'text-black/90 hover:bg-black/10'
                 }`}
               >
                 {link.name}

@@ -60,7 +60,7 @@ const BlogSingle = () => {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/blog">
-            <Button variant="outline" className="mb-8 border-white text-white hover:bg-white hover:text-blue-600">
+            <Button variant="outline" className="mb-8 border-black text-white hover:bg-white hover:text-blue-600">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
             </Button>
